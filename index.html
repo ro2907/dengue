@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/css/normalize.css">
+  <link rel="stylesheet" href="./src/css/style.css">
+  <title>Cuidado con el Dengue</title>
+</head>
+<body>
+  <div class="flex">
+    <div>
+      <!-- <h1>Cuidado con el Dengue</h1> -->
+      <div id="startButton" >
+          <button id="comenzar">Comenzar</button>
+      </div>
+      <div class="mision">
+        <h2>MISIÓN:</h2>
+        <P>Quitar todos los recipientes donde el Mosquito del Dengue puede Crecer.</P>
+      </div>
+    </div>
+    
+    <div id="game"></div>
+    <div id="leaderboard" class="sidebar">
+      <h2>TOP 10</h2>
+      <table>
+          <tr><td id="ranking1">AAA</td><td id="puntos1">650</td></tr>
+          <tr><td id="ranking2">BBB</td><td id="puntos2">600</td></tr>
+          <tr><td id="ranking3">CCC</td><td id="puntos3">550</td></tr>
+          <tr><td id="ranking4">DDD</td><td id="puntos4">500</td></tr>
+          <tr><td id="ranking5">EEE</td><td id="puntos5">450</td></tr>
+          <tr><td id="ranking6">FFF</td><td id="puntos6">400</td></tr>
+          <tr><td id="ranking7">GGG</td><td id="puntos7">350</td></tr>
+          <tr><td id="ranking8">HHH</td><td id="puntos8">300</td></tr>
+          <tr><td id="ranking9">III</td><td id="puntos9">250</td></tr>
+          <tr><td id="ranking10">JJJ</td><td id="puntos10">200</td></tr>
+          <!-- Agrega más filas según sea necesario -->
+      </table>
+  </div>
+  </div>
+  <script src="//cdn.jsdelivr.net/npm/phaser@3.24.0/dist/phaser.js"></script>
+  <script src="src/app.js" type="module"></script>
+</body>
+</html>

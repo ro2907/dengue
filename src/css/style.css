@@ -1,0 +1,101 @@
+body {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0,0,0,.50) 100%), url(../fondoArcadefinal.jpg);
+    background-position: center center;
+    background-size: cover;  
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    width: 95%;
+    margin: 0 auto;
+    padding-top: 2%;
+}
+.sidebar {
+    height: 80%;
+    border: 2px solid #f552f9;
+    box-shadow: 0 0 10px #f552f9;
+    background-color: transparent;
+    color: #fff;
+    padding: 20px;
+}
+
+#leaderboard {
+    margin-right: 20px;
+    border-radius: 10px;
+}
+#startButton {
+    margin-left: 20px;
+}
+
+#game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+button {
+    background: transparent;
+    border: 2px solid #f552f9;
+    box-shadow: 0 0 10px #f552f9;
+    border-radius: 50%;
+    color: #f552f9;
+    padding: 60px 10px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 28px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background: #f552f9;
+    color: white;
+}
+h1, p {
+    font-size: 45px;
+    width: 160px;  
+    color: #f552f9;
+    font-weight: bold;
+}
+p {
+    font-size: 20px;
+    text-align: center; 
+    margin-top: 0;
+    
+}
+h2 {
+    font-size: 38px;
+    color: #f552f9;
+    font-weight: bold;
+    margin: 5px 0;
+}
+.mision h2{
+    margin-top: 20px;
+    font-size: 33px;
+    text-align: center; 
+}
+table {
+    width: 100%;
+    font-size: 25px;
+    color: #f552f9;
+  
+   
+}
+.mision {
+    width: 160px;
+    border: 2px solid #f552f9;
+    box-shadow: 0 0 10px #f552f9;
+    margin-left: 20px;
+    margin-top: 50px;
+    border-radius: 10px;
+}
