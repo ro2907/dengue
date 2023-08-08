@@ -1,5 +1,5 @@
 export class StartScene extends Phaser.Scene {
-   
+   intro;
     constructor() {
         super({ key: 'StartScene' });
     }
@@ -13,11 +13,15 @@ export class StartScene extends Phaser.Scene {
     }
 
     create() {
-        let intro = this.sound.add('musicIntro');
-            intro.play({
+        if (!this.sound.get('musicIntro')) {
+         this.intro = this.sound.add('musicIntro');
+        }
+        console.log(!this.sound.get('musicIntro'))
+        console.log(this.sound.add('musicIntro'))
+        this.intro.play({
             loop: true,
             volume: 0.5,
-        });
+        });   
         let button = document.getElementById('comenzar');
         button.style.display = "block";
          // Agrega un detector de eventos de click al botón
@@ -26,7 +30,7 @@ export class StartScene extends Phaser.Scene {
             button.style.display = "none";
 
             // Reinicia el juego
-            intro.stop();
+            this.intro.stop();
             this.scene.start('PlayScene');
             });
 
@@ -48,7 +52,7 @@ export class StartScene extends Phaser.Scene {
                 callbackScope: this,
                 loop: true
             });
-    
+            
 
          let highScores = JSON.parse(localStorage.getItem('highScores')) || [];
          if (highScores.length == 0) {

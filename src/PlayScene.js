@@ -64,7 +64,7 @@ export class PlayScene extends Phaser.Scene {
 
     //Esto crea un nuevo sprite llamado player, ubicado a 100 x 450 píxeles desde la parte inferior del juego. El sprite se creó a través de Physics Game Object Factory ( this.physics.add), lo que significa que tiene un cuerpo de física dinámica de forma predeterminada.
     this.player = this.physics.add.sprite(100, 450, 'dude').setScale(1.5).refreshBody();
-
+    this.player.body.setSize(this.player.width * 0.6, this.player.height * 0.9);
     //Para permitir que el jugador colisione con las plataformas, podemos crear un objeto Colisionador. Este objeto monitorea dos objetos físicos (que pueden incluir grupos) y busca colisiones o superposiciones entre ellos.
     this.physics.add.collider(this.player, this.platforms);
 
@@ -123,6 +123,7 @@ this.stars = this.physics.add.group({
 this.stars.children.iterate(function (child) {
 
     child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8)).setScale(1.3).refreshBody();
+    child.body.setSize(child.width * 0.6, child.height * 0.8);// Ajusta estos valores de acuerdo a tus necesidades
 
 });
 //las estrellas caerían por la parte inferior del juego y se perderían de vista. Para detener eso, debemos verificar su colisión contra las plataformas.
@@ -197,6 +198,7 @@ collectStar (player, star)
         var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
 
         var bomb = this.bombs.create(x, 16, 'bomb').setScale(1.3).refreshBody();
+        bomb.body.setSize(bomb.width * 0.65, bomb.height * 0.9);
         bomb.verificado = false;
         bomb.setBounce(1);
         bomb.setCollideWorldBounds(true);

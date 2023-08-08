@@ -22,9 +22,7 @@ export class EndScene extends Phaser.Scene {
     
     create() {
         let intro = this.sound.add('musicGanador');
-            intro.play({
-            volume: 1,
-        });
+           
         this.add.image(400, 300, 'endScreen');
         let highScores = JSON.parse(localStorage.getItem('highScores')) || [];
         if (highScores.length == 0) {
@@ -44,7 +42,10 @@ export class EndScene extends Phaser.Scene {
             localStorage.setItem('highScores', JSON.stringify(highScores));
         }
         console.log(highScores)
-        if (highScores.length < 10 || this.score > highScores[highScores.length - 1].score) {
+        if (highScores.length < 10 || this.score >= highScores[highScores.length - 1].score) {
+            intro.play({
+                volume: 1,
+            });
             // El jugador ha conseguido un puesto en la lista de los 10 mejores
             this.eligibleForHighScore = true;
     
@@ -63,8 +64,8 @@ export class EndScene extends Phaser.Scene {
             this.nameText = this.add.text(405, 434, `AAA`, { fontSize: '45px', fill: '#206ebc', fontStyle: 'bold', fontFamily: 'Sans-serif' }).setOrigin(0.5, 0.5);
             this.timer = this.time.addEvent({ delay: 500, callback: this.toggleBlink, callbackScope: this, loop: true });
     
-            // Después de 10 segundos, guarda la puntuación y el nombre del jugador y cambia a la siguiente escena
-            this.time.delayedCall(10000, () => {
+            // Después de 15 segundos, guarda la puntuación y el nombre del jugador y cambia a la siguiente escena
+            this.time.delayedCall(15000, () => {
                 this.nameEntered = true;
                 this.input.keyboard.off('keydown', this.handleKey, this);
     
